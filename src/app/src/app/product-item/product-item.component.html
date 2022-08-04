@@ -1,0 +1,21 @@
+<div class="product-index" >
+   <a routerLink="/product/{{bookdata.id}}" (click)="lastItemClicked.emit(bookdata.name)"> <img class="product-image" src={{bookdata.url}}> </a>
+        <p>{{bookdata.name}}</p>
+        <p>${{bookdata.price}}</p>
+        <div>
+                <select   [(ngModel)]="val">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" >5</option>
+                    <option value="6" >6</option>
+        </select>
+        </div>
+        <button class="btn buttonhome1 button-hover" (click)="onSubmit()" >Add to cart</button>
+    </div>
+        
+    
+    
+    
+

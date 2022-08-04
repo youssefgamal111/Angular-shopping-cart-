@@ -1,0 +1,32 @@
+p{margin: 1px;}
+.product-index {
+  text-align: center;
+
+  }
+  .product-image {      
+    list-style-type: none;
+    width: 290px;
+    padding: 20px;
+    margin: 6px 6px;        
+    border: 1px solid #33B5E5;
+  } 
+  .btn{
+    border: 2px solid #33B5E5;
+    border-radius: 5px;;
+    width: 125;
+    height: 55;
+    cursor: pointer;
+    color:white;
+    font-size: 15;
+    
+}
+ .buttonhome1{
+    color: white;
+    background-color: #6195ff;
+}
+
+   .button-hover:hover{
+    opacity: 0.8;
+   }
+   .button-hover{
+    transition: opacity .5s;}

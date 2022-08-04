@@ -1,0 +1,20 @@
+body{margin: 0;}
+.header {
+    margin: 0px;
+    text-align: center;
+    background: #33B5E5;
+    color: #fff;
+    padding: 10px 0;
+
+
+  }
+  
+    a {
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  a:hover{
+    
+  color:#50035a
+}

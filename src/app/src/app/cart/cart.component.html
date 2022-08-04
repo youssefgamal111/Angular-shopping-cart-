@@ -1,0 +1,65 @@
+<div class="product-container" >
+<div class="product-index" *ngFor="let i of items">
+   <img class="product-image" style="height: 20vh;width:20vh;" src="{{i.url}}"> 
+   <div class="left">
+         <p>{{i.name}}</p>
+         <p>{{i.price}}</p>
+         
+         <button (click)="subItemAmount(i)" class="btn buttonhome1 button-hover">-</button>
+         <input [(ngModel)]="i.amount" disabled style="text-align: center;height: 3vh;width: 6vh;" (change)="updateTotal()">
+         <button (click)=addItemAmount(i) class="btn buttonhome2 button-hover">+</button>
+        </div>
+     </div>
+    </div>
+    <h2>Total = ${{total}}</h2>
+    <div *ngIf="total!=0">
+         <form #form="ngForm" (ngSubmit)="onSubmit()" >
+            <label>Fullname</label>
+            <br>
+            <input 
+            type="text" 
+            name="name" 
+            required 
+            minlength="3" 
+            [(ngModel)]="fullName" 
+            #cartFullName="ngModel" placeholder="(minimum 3 characters)">
+         <br>
+            <label>Address</label>
+            <br>
+            <input name="address" [(ngModel)]="address"  #cartAddress="ngModel"required 
+            minlength="6"  placeholder="(minimum 6 characters)">
+         <br>
+            <label>Credit Card</label>
+            <br>
+            <input name="cartadd" [(ngModel)]="creditCard" (ngModelChange)="validateCredit()" #cartadd="ngModel" required 
+            minlength="16"  placeholder="(minimum 16 characters)">
+            <br>
+               <H5>We will never share your payment details with anyone else.</H5>   
+             <button type="submit" [disabled]="form.invalid"class="btn3 buttonhome3 button-hover">Submit</button>
+             
+         </form>
+         <div *ngIf="cartFullName.invalid && cartFullName.dirty">
+            <div *ngIf="cartFullName.errors?.['required']">
+            Please provide your fullName.
+            </div>
+            <div *ngIf="cartFullName.errors?.['minlength']">
+            The fullname must contain at least 3 characters.
+            </div>
+         </div>
+         <div *ngIf="cartAddress.invalid && cartAddress.dirty">
+            <div *ngIf="cartAddress.errors?.['required']">
+            Please provide your Address.
+            </div>
+            <div *ngIf="cartAddress.errors?.['minlength']">
+            The Addrees must contain at least 6 characters.
+            </div>
+         </div>
+         <div *ngIf="cartadd.invalid && cartadd.dirty">
+            <div *ngIf="cartadd.errors?.['required']">
+            Please provide your creditCard.
+            </div>
+            <div *ngIf="cartadd.errors?.['minlength']">
+             creditCard must contain  16 characters.
+            </div>
+         </div>
+      </div>

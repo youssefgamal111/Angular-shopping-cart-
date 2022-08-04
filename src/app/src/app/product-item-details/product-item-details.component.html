@@ -1,0 +1,21 @@
+<div class="product-index" >
+    <img class="product-image" src="{{product.url}}">      
+    <div class="sec"> 
+        <p>{{product.name}}</p>
+        <p>{{product.price}}</p>
+        <p>{{product.description}}</p>
+        
+        <div>
+                <select [(ngModel)]="val"  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" >5</option>
+                    <option value="6" >6</option>
+        </select>
+        </div>
+        <button class="btn buttonhome1 button-hover" (click)="addToCart()"  >Add to cart</button>
+       <p> <a routerLink="/">Back to product list</a></p>
+    </div>
+    </div>
